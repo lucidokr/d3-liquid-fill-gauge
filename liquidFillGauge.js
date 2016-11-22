@@ -45,6 +45,7 @@
         textSize: 1, // The relative height of the text to display in the wave circle. 1 = 50%
         displayPercent: true, // If true, a % symbol is displayed after the value.
         textColor: "#045681", // The color of the value text when the wave does not overlap it.
+        label: "%",
         waveTextColor: "#A4DBf8", // The color of the value text when the wave overlaps it.
     };
 
@@ -79,7 +80,7 @@
             var textPixels = (config.get("textSize") * radius / 2);
             var textFinalValue = parseFloat(value).toFixed(2);
             var textStartValue = config.get("valueCountUp") ? config.get("minValue") : textFinalValue;
-            var percentText = config.get("displayPercent") ? "%" : "";
+            var percentText = config.get("displayPercent") ? "%" : config.get("label");
             var circleThickness = config.get("circleThickness") * radius;
             var circleFillGap = config.get("circleFillGap") * radius;
             var fillCircleMargin = circleThickness + circleFillGap;
